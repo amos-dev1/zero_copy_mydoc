@@ -1,6 +1,6 @@
-# Tutorial Zero-Copy ROS2 con FastDDS
+# Zero-Copy ROS2 con FastDDS
 
-Guida completa per implementare la comunicazione zero-copy in ROS2 usando FastDDS e messaggi loaned.
+Documentazione completa per tenere traccia di come ho implementato la comunicazione zero-copy in ROS2 usando FastDDS e messaggi loaned.
 
 ---
 
