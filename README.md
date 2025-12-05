@@ -7,14 +7,14 @@ Guida completa per implementare la comunicazione zero-copy in ROS2 usando FastDD
 ## Indice
 
 1. [Creazione Package](src/my_zero_copy_pkg_40k/tutorial/01_creazione_package.md)
-2. [Messaggio Custom POD](02_messaggio_custom.md)
-3. [Configurazione FastDDS](03_configurazione_fastdds.md)
-4. [Publisher Standard](04_publisher_standard.md)
-5. [Subscriber Standard](05_subscriber_standard.md)
-6. [Publisher Loaned (Zero-Copy)](06_publisher_loaned.md)
-7. [Subscriber Loaned (Zero-Copy)](07_subscriber_loaned.md)
-8. [Compilazione e Test](08_compilazione_test.md)
-9. [Verifica Funzionamento SHM](09_verifica_shm.md)
+2. [Messaggio Custom POD](src/my_zero_copy_pkg_40k/tutorial/02_messaggio_custom.md)
+3. [Configurazione FastDDS](src/my_zero_copy_pkg_40k/tutorial/03_configurazione_fastdds.md)
+4. [Publisher Standard](src/my_zero_copy_pkg_40k/tutorial/04_publisher_standard.md)
+5. [Subscriber Standard](src/my_zero_copy_pkg_40k/tutorial/05_subscriber_standard.md)
+6. [Publisher Loaned (Zero-Copy)](src/my_zero_copy_pkg_40k/tutorial/06_publisher_loaned.md)
+7. [Subscriber Loaned (Zero-Copy)](src/my_zero_copy_pkg_40k/tutorial/07_subscriber_loaned.md)
+8. [Compilazione e Test](src/my_zero_copy_pkg_40k/tutorial/08_compilazione_test.md)
+9. [Verifica Funzionamento SHM](src/my_zero_copy_pkg_40k/tutorial/09_verifica_shm.md)
 
 ---
 
