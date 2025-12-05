@@ -17,7 +17,7 @@ Per il zero-copy, il messaggio DEVE essere POD perché:
 
 ## Cosa NON usare
 
-### ❌ std_msgs/Header
+### std_msgs/Header
 ```msg
 # NON USARE!
 std_msgs/Header header
@@ -25,13 +25,13 @@ std_msgs/Header header
 
 Il tipo `Header` contiene un campo `string frame_id` che è a dimensione variabile!
 
-### ❌ Array dinamici
+### Array dinamici
 ```msg
 # NON USARE!
 int32[] data    # Lunghezza variabile!
 ```
 
-### ❌ Stringhe
+### Stringhe
 ```msg
 # NON USARE!
 string nome     # Lunghezza variabile!
@@ -41,14 +41,14 @@ string nome     # Lunghezza variabile!
 
 ## Cosa usare
 
-### ✅ Tipi numerici
+### Tipi numerici
 ```msg
 int32 valore
 float64 temperatura
 uint8 flag
 ```
 
-### ✅ Array a lunghezza fissa
+### Array a lunghezza fissa
 ```msg
 int32[100] dati    # Esattamente 100 interi
 float32[50] valori # Esattamente 50 float
