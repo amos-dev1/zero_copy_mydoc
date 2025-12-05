@@ -119,4 +119,4 @@ ls -la /dev/shm | grep fastrtps
 
 ## Prossimo Passo
 
-Inizia dal capitolo [1. Creazione Package](01_creazione_package.md).
+Inizia dal capitolo [1. Creazione Package](src/my_zero_copy_pkg_40k/tutorial/01_creazione_package.md).
