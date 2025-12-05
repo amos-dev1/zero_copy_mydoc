@@ -2,12 +2,10 @@
 
 Documentazione completa per tenere traccia di come ho implementato la comunicazione zero-copy in ROS2 usando FastDDS e messaggi loaned.
 > [!IMPORTANT]
-> Non ho verificato completamente il funzionamento della zero copy:
+> Non ho verificato completamente il funzionamento della zero copy ma:
 >
-> 
 > Secondo i log in `/dev/shm` la memoria condivisa viene usata.
 > FastDDS Monitor mostra UDPv4 in Locators per i Participants perché è usato per la **discovery**.
-> 
 > I **dati effettivi** vengono trasferiti via **Shared Memory** (SHM).  --> Trovi i dettagli nel documento di throubleshooting.
 ---
 
