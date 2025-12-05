@@ -130,14 +130,14 @@ For zero-copy to work, messages must be:
 2. **POD (Plain Old Data)** - No std_msgs/Header (contains string)
 3. **Pure numeric types** - int32, float64, etc.
 
-### ✅ Valid Zero-Copy Message
+### Valid Zero-Copy Message
 ```msg
 int32 timestamp_sec
 uint32 timestamp_nanosec
 int32[40000] data
 ```
 
-### ❌ Invalid (Non-POD)
+### Invalid (Non-POD)
 ```msg
 std_msgs/Header header  # Contains string frame_id!
 int32[] data            # Unbounded array!
@@ -149,11 +149,11 @@ int32[] data            # Unbounded array!
 
 ### Publisher Output Check
 ```
-[IT] Zero-copy ABILITATO ...     ✅ Working
-[IT] Msg #0 (zc) | ...           ✅ Using zero-copy
+[IT] Zero-copy ABILITATO ...     Working
+[IT] Msg #0 (zc) | ...           Using zero-copy
 
-[IT] Zero-copy NON DISPONIBILE   ❌ Not working
-[IT] Msg #0 (std) | ...          ❌ Standard publishing
+[IT] Zero-copy NON DISPONIBILE   Not working
+[IT] Msg #0 (std) | ...          Standard publishing
 ```
 
 ---
