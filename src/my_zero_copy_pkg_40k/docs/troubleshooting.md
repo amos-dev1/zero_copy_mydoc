@@ -26,7 +26,7 @@
 
 ---
 
-## ✅ SOLVED: NotEnoughMemoryException (Terminal Issue)
+## SOLVED: NotEnoughMemoryException (Terminal Issue)
 
 ### Root Cause Found / Causa Trovata
 
@@ -49,7 +49,7 @@
 
 ---
 
-## ✅ SOLVED: SHM IS Working! (FastDDS Monitor Shows UDPv4 for Discovery)
+## SOLVED: SHM IS Working! (FastDDS Monitor Shows UDPv4 for Discovery)
 
 ### What We Found / Cosa Abbiamo Trovato
 
@@ -82,13 +82,13 @@ FastDDS Monitor shows the discovery locators (UDPv4), but data goes through shar
 
 | # | Attempt | XML Config | Result |
 |---|---------|------------|--------|
-| 1 | Simple data_sharing | `<data_writer>` with `AUTOMATIC` | ❌ Still UDPv4 |
-| 2 | Add transport_descriptors | `<transport_descriptors>` outside profiles | ❌ XML parser error |
-| 3 | Move transport_descriptors | Inside `<profiles>` | ❌ Still error |
-| 4 | Add shared_memory_directory | In `<data_sharing>` | ❌ Invalid element error |
-| 5 | LARGE_DATA builtin | `<builtinTransports>LARGE_DATA` | ❌ Still UDPv4 |
-| 6 | Copy from reference repo | Use `<publisher>`/`<subscriber>` tags | ❌ Still UDPv4 |
-| 7 | **Force data_sharing ON** | `<kind>ON</kind>` instead of AUTOMATIC | ⏳ Testing... |
+| 1 | Simple data_sharing | `<data_writer>` with `AUTOMATIC` | Still UDPv4 |
+| 2 | Add transport_descriptors | `<transport_descriptors>` outside profiles | XML parser error |
+| 3 | Move transport_descriptors | Inside `<profiles>` | Still error |
+| 4 | Add shared_memory_directory | In `<data_sharing>` | Invalid element error |
+| 5 | LARGE_DATA builtin | `<builtinTransports>LARGE_DATA` | Still UDPv4 |
+| 6 | Copy from reference repo | Use `<publisher>`/`<subscriber>` tags | Still UDPv4 |
+| 7 | **Force data_sharing ON** | `<kind>ON</kind>` instead of AUTOMATIC | Testing... |
 
 > **Note**: User has duplicate `FASTRTPS_DEFAULT_PROFILES_FILE` in `.bashrc` - second value overrides first.
 
@@ -105,7 +105,7 @@ FastDDS Monitor shows the discovery locators (UDPv4), but data goes through shar
 
 ---
 
-## ❌ FIXED: Previous XML Parser Errors
+## FIXED: Previous XML Parser Errors
 
 ### Error 1: transport_descriptors
 ```
@@ -133,10 +133,10 @@ During debugging terminal issue, we tried things that weren't the problem:
 
 | Attempt | Description | Necessary? |
 |---------|-------------|------------|
-| Reduce array size | 40k → 10k → 125 | ❌ No |
-| Change data_sharing | AUTOMATIC → OFF | ❌ No |
-| Remove std_msgs/Header | Replace with POD fields | ✅ Yes (for zero-copy) |
-| Remove loaned API | Use standard publishing | ❌ No |
+| Reduce array size | 40k → 10k → 125 | No |
+| Change data_sharing | AUTOMATIC → OFF | No |
+| Remove std_msgs/Header | Replace with POD fields | Yes (for zero-copy) |
+| Remove loaned API | Use standard publishing | No |
 
 ---
 
@@ -190,8 +190,8 @@ ros2 run my_zero_copy_pkg_40k loaned_publisher     # Terminal 2
 
 | File | Description |
 |------|-------------|
-| `src/standard_publisher.cpp` | Publisher standard con std_msgs (WORKING ✅) |
-| `src/standard_subscriber.cpp` | Subscriber standard con std_msgs (WORKING ✅) |
+| `src/standard_publisher.cpp` | Publisher standard con std_msgs (WORKING) |
+| `src/standard_subscriber.cpp` | Subscriber standard con std_msgs (WORKING) |
 | `src/loaned_publisher.cpp` | Publisher con borrow_loaned_message() |
 | `src/loaned_subscriber.cpp` | Subscriber per messaggi loaned |
 | `msg/FixedArray40k.msg` | Messaggio custom POD (40K interi) |
