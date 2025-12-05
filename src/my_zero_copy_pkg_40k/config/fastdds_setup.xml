@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FastDDS Configuration for Zero-Copy / Data Sharing
+  Configurazione FastDDS per Zero-Copy / Data Sharing
+  
+  EN: Based on working example from leonardonels/zero_copy repo.
+      Changed data_sharing from AUTOMATIC to ON to force SHM.
+  IT: Basato su esempio funzionante da repo leonardonels/zero_copy.
+      Cambiato data_sharing da AUTOMATIC a ON per forzare SHM.
+-->
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <profiles>
+        <!-- Default publisher profile -->
+        <publisher profile_name="default publisher profile" is_default_profile="true">
+            <qos>
+                <publishMode>
+                    <kind>SYNCHRONOUS</kind>
+                </publishMode>
+                <!-- Changed to ON to force data sharing -->
+                <data_sharing>
+                    <kind>ON</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </publisher>
+
+        <!-- Default subscriber profile -->
+        <subscriber profile_name="default subscriber profile" is_default_profile="true">
+            <qos>
+                <!-- Changed to ON to force data sharing -->
+                <data_sharing>
+                    <kind>ON</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </subscriber>
+
+        <!-- Publisher profile for topic fixed_array_40k -->
+        <publisher profile_name="fixed_array_40k">
+            <qos>
+                <publishMode>
+                    <kind>SYNCHRONOUS</kind>
+                </publishMode>
+                <data_sharing>
+                    <kind>ON</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </publisher>
+
+        <!-- Subscriber profile for topic fixed_array_40k -->
+        <subscriber profile_name="fixed_array_40k">
+            <qos>
+                <data_sharing>
+                    <kind>ON</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </subscriber>
+    </profiles>
+</dds>

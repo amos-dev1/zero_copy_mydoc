@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package format="3">
+  <name>my_zero_copy_pkg_40k</name>
+  <version>1.0.0</version>
+  <description>
+    ROS2 Zero-Copy Package con array di 40.000 interi.
+    ROS2 Zero-Copy Package with 40,000 integer array.
+  </description>
+  <maintainer email="oe@example.com">oe</maintainer>
+  <license>MIT</license>
+
+  <!-- Build tool -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <!-- Runtime dependencies -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+
+  <!-- Message generation -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <!-- Test dependencies -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

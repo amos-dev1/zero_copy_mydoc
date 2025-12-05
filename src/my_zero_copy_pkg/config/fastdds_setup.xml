@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  FastDDS Configuration for Zero-Copy Data Sharing
+  Configurazione FastDDS per Data Sharing Zero-Copy
+  
+  EN: This XML configures Fast DDS to enable zero-copy data sharing
+      using shared memory transport. Data sharing allows publishers
+      and subscribers to share memory directly without copying.
+      NOTE: Data sharing set to OFF temporarily to debug memory issue.
+  
+  IT: Questo XML configura Fast DDS per abilitare lo zero-copy
+      usando il trasporto in memoria condivisa. Il data sharing permette
+      a publisher e subscriber di condividere la memoria direttamente.
+      NOTA: Data sharing impostato su OFF temporaneamente per debug.
+-->
+<dds xmlns="http://www.eprosima.com/XMLSchemas/fastRTPS_Profiles">
+    <profiles>
+        <!-- 
+          EN: Default publisher profile - DATA SHARING DISABLED for debugging
+          IT: Profilo publisher predefinito - DATA SHARING DISABILITATO per debug
+        -->
+        <publisher profile_name="default publisher profile" is_default_profile="true">
+            <qos>
+                <publishMode>
+                    <kind>SYNCHRONOUS</kind>
+                </publishMode>
+                <!-- 
+                  EN: DATA SHARING OFF to avoid NotEnoughMemoryException
+                  IT: DATA SHARING OFF per evitare NotEnoughMemoryException
+                -->
+                <data_sharing>
+                    <kind>OFF</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </publisher>
+
+        <!-- 
+          EN: Default subscriber profile - DATA SHARING DISABLED for debugging
+          IT: Profilo subscriber predefinito - DATA SHARING DISABILITATO per debug
+        -->
+        <subscriber profile_name="default subscriber profile" is_default_profile="true">
+            <qos>
+                <data_sharing>
+                    <kind>OFF</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </subscriber>
+
+        <!-- 
+          EN: Specific profile for the fixed_array_125 topic
+          IT: Profilo specifico per il topic fixed_array_125
+        -->
+        <publisher profile_name="fixed_array_125">
+            <qos>
+                <publishMode>
+                    <kind>SYNCHRONOUS</kind>
+                </publishMode>
+                <data_sharing>
+                    <kind>OFF</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </publisher>
+
+        <subscriber profile_name="fixed_array_125">
+            <qos>
+                <data_sharing>
+                    <kind>OFF</kind>
+                </data_sharing>
+            </qos>
+            <historyMemoryPolicy>PREALLOCATED_WITH_REALLOC</historyMemoryPolicy>
+        </subscriber>
+    </profiles>
+</dds>

@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<!--
+  Package manifest for my_zero_copy_pkg
+  Manifest del pacchetto per my_zero_copy_pkg
+  
+  IT: Questo file definisce le dipendenze e i metadati del pacchetto ROS2
+      per il trasferimento zero-copy di array di 40.000 interi.
+  
+  EN: This file defines the dependencies and metadata of the ROS2 package
+      for zero-copy transfer of 40,000 integer arrays.
+-->
+<package format="3">
+  <name>my_zero_copy_pkg</name>
+  <version>1.0.0</version>
+  <description>
+    IT: Pacchetto ROS2 per il trasferimento zero-copy di array di 40.000 interi usando FastDDS.
+    EN: ROS2 package for zero-copy transfer of 40,000 integer arrays using FastDDS.
+  </description>
+  <maintainer email="achir.dev@gmail.com">oe</maintainer>
+  <license>Apache-2.0</license>
+
+  <!-- Build tool / Strumento di build -->
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  
+  <!-- 
+    IT: Dipendenza per la generazione di messaggi personalizzati
+    EN: Dependency for custom message generation
+  -->
+  <buildtool_depend>rosidl_default_generators</buildtool_depend>
+
+  <!-- 
+    IT: Dipendenze runtime per ROS2 e messaggi
+    EN: Runtime dependencies for ROS2 and messages
+  -->
+  <depend>rclcpp</depend>
+  <depend>std_msgs</depend>
+  
+  <!-- 
+    IT: Runtime per i messaggi generati
+    EN: Runtime for generated messages
+  -->
+  <exec_depend>rosidl_default_runtime</exec_depend>
+
+  <!-- Test dependencies / Dipendenze per i test -->
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <!-- 
+    IT: Membership nel gruppo dei pacchetti con interfacce rosidl
+    EN: Membership in the rosidl interface packages group
+  -->
+  <member_of_group>rosidl_interface_packages</member_of_group>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
