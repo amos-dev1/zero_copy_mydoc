@@ -18,6 +18,16 @@ Guida completa per implementare la comunicazione zero-copy in ROS2 usando FastDD
 
 ---
 
+## Documentazione tecnica
+
+1. [FastDDS XML](src/my_zero_copy_pkg_40k/docs/fastdds_doc.md)
+2. [Custom Message](src/my_zero_copy_pkg_40k/docs/message_doc.md)
+3. [Loaned Publisher](src/my_zero_copy_pkg_40k/docs/publisher_doc.md)
+4. [Loaned Subscriber](src/my_zero_copy_pkg_40k/docs/subscriber_doc.md)
+5. [Troubleshooting](src/my_zero_copy_pkg_40k/docs/troubleshooting.md)
+
+---
+
 ## Cos'è Zero-Copy?
 
 La comunicazione **zero-copy** elimina le copie di dati tra publisher e subscriber. Invece di copiare i dati nella memoria del middleware e poi nella memoria del subscriber, i dati vengono scritti direttamente in una zona di memoria condivisa (Shared Memory - SHM).
