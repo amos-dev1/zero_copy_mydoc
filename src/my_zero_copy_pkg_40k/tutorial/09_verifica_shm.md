@@ -175,8 +175,8 @@ Prima di considerare zero-copy funzionante, verifica:
 
 ```
                     ┌──────────────────────────────────────┐
-                    │         /dev/shm (Linux)              │
-                    │                                       │
+                    │         /dev/shm (Linux)             │
+                    │                                      │
    ┌────────────┐   │  ┌─────────────────────────────────┐ │   ┌────────────┐
    │ Publisher  │───│──│  fastrtps_xxxxx                 │─│───│ Subscriber │
    │ (loaned)   │   │  │  ┌────────────────────────────┐ │ │   │ (callback) │
@@ -188,9 +188,9 @@ Prima di considerare zero-copy funzionante, verifica:
                     │  │  │ data[39999]: 39999         │ │ │
                     │  │  └────────────────────────────┘ │ │
                     │  └─────────────────────────────────┘ │
-                    │                                       │
-                    │  Stessa memoria fisica!               │
-                    │  Nessuna copia!                       │
+                    │                                      │
+                    │  Stessa memoria fisica!              │
+                    │  Nessuna copia!                      │
                     └──────────────────────────────────────┘
 ```
 
@@ -200,10 +200,10 @@ Prima di considerare zero-copy funzionante, verifica:
 
 Se hai seguito tutti i passi del tutorial, ora hai:
 
-1. ✅ Un package ROS2 con messaggi POD
-2. ✅ Publisher e subscriber zero-copy funzionanti
-3. ✅ Configurazione FastDDS per SHM
-4. ✅ Verifica che SHM sia attivo
+1. Un package ROS2 con messaggi POD
+2. Publisher e subscriber zero-copy funzionanti
+3. Configurazione FastDDS per SHM
+4. Verifica che SHM sia attivo
 
 **Congratulazioni! Il tuo sistema zero-copy è operativo!**
 
