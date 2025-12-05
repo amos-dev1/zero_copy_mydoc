@@ -6,7 +6,7 @@ Guida completa per implementare la comunicazione zero-copy in ROS2 usando FastDD
 
 ## Indice
 
-1. [Creazione Package](01_creazione_package.md)
+1. [Creazione Package](src/my_zero_copy_pkg_40k/tutorial/01_creazione_package.md)
 2. [Messaggio Custom POD](02_messaggio_custom.md)
 3. [Configurazione FastDDS](03_configurazione_fastdds.md)
 4. [Publisher Standard](04_publisher_standard.md)
